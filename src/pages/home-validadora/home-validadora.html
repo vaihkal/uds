@@ -1,0 +1,30 @@
+<!--
+  Generated template for the HomeValidadoraPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Validación de la información</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div style="text-align: center" *ngIf="!solicitudes || solicitudes.length==0">
+        <ion-icon style="font-size: 2em" name="notifications-off"></ion-icon>
+        <p>No tienes solicitudes</p>
+    </div>
+    <ion-list>
+      <button color="secondary" ion-item *ngFor="let sol of solicitudes" (click)="validar(sol)">
+          <h2>{{sol.certificacion}}</h2>
+          <ion-icon item-end name="arrow-forward"></ion-icon>
+        </button>
+    </ion-list>
+</ion-content>

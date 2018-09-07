@@ -1,14 +1,27 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+    <ion-toolbar color="secondary" style="text-align:center;">
+          <img style="max-width: 8rem;" [src]="perfil.logo"/>
+          <ion-card-content>
+            <ion-card-title style="color:white">
+              {{perfil.nombre}}
+            </ion-card-title>
+            <p style="color:white" *ngIf="!perfil.autenticidad">Autenticidad: {{perfil.autenticidad}}%</p>
+          </ion-card-content>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <ion-list>
+    <ion-list color="primary">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon"></ion-icon>
         {{p.title}}
+      </button>
+    </ion-list>
+    <ion-list>
+      <button menuClose ion-item (click)="logout()">
+        <ion-icon name="lock"></ion-icon>
+        Cerrar Sesión
       </button>
     </ion-list>
   </ion-content>

@@ -1,0 +1,6 @@
+<ion-tabs>
+    <ion-tab color="secondary" *ngIf="rol=='Ciudadano' || rol=='Empresa'" [root]="inicioRoot" tabTitle="Inicio" tabIcon="home"></ion-tab>
+    <ion-tab color="secondary" *ngIf="rol=='Ciudadano' || rol=='Empresa'" [root]="solicitudesRoot" tabTitle="Solicitudes" tabIcon="chatboxes"></ion-tab>
+    <ion-tab color="secondary" *ngIf="rol=='Ciudadano' || rol=='Empresa'" [root]="historialRoot" tabTitle="Historial" tabIcon="archive"></ion-tab>
+    <ion-tab color="secondary" *ngIf="rol=='Ciudadano'" [root]="firmaRoot" tabTitle="Firma" tabIcon="key"></ion-tab>
+</ion-tabs>
